@@ -1,0 +1,43 @@
+<section class="full-width pageContent">
+	<section class="full-width header-well">
+		<div class="full-width header-well-icon">
+			<i class="zmdi zmdi-truck"></i>
+		</div>
+		<div class="full-width header-well-text">
+			<p class="text-condensedLight">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde aut nulla accusantium minus corporis accusamus fuga harum natus molestias necessitatibus.
+			</p>
+		</div>
+	</section>
+	<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+		<div class="mdl-tabs__tab-bar">
+			<a id="newP" class="mdl-tabs__tab is-active">NEW</a>
+			<a id="listP" class="mdl-tabs__tab">LIST</a>
+		</div>
+		<div id="cont">
+				
+		</div>
+	</div>
+</section>
+<script type="text/javascript">
+	$(document).ready(function(){
+			cargarProductoForm();
+		});
+
+		$('#newP').click(function(){
+				cargarProductoForm();
+		});
+		$('#listP').click(function(){
+				cargarProductoList();
+		});
+
+		function cargarProductoForm(){
+			$('#cont').load("providersform.html");
+		}
+
+		function cargarProductoList(){
+			
+			preProveedoresList('cont');
+		}
+</script>
+

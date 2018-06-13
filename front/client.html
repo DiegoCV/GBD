@@ -1,0 +1,42 @@
+<section class="full-width pageContent">
+		<section class="full-width header-well">
+			<div class="full-width header-well-icon">
+				<i class="zmdi zmdi-accounts"></i>
+			</div>
+			<div class="full-width header-well-text">
+				<p class="text-condensedLight">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde aut nulla accusantium minus corporis accusamus fuga harum natus molestias necessitatibus.
+				</p>
+			</div>
+		</section>
+		<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+			<div class="mdl-tabs__tab-bar">
+				<a id="newC" class="mdl-tabs__tab is-active">NEW</a>
+				<a id="listC" class="mdl-tabs__tab">LIST</a>
+			</div>
+			<div id="tabNewClient">
+				
+			</div>
+		</div>
+	</section>
+	<script type="text/javascript">
+	$(document).ready(function(){
+			cargarClienteForm();
+		});
+
+		$('#newC').click(function(){
+				cargarClienteForm();
+		});
+		$('#listC').click(function(){
+				cargarClienteList();
+		});
+
+		function cargarClienteForm(){
+			$('#tabNewClient').load("ClienteForm.html");
+		}
+
+		function cargarClienteList(){
+			
+			preClientesList('tabNewClient');
+		}
+</script>

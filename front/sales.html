@@ -1,0 +1,85 @@
+<section class="full-width pageContent">
+	<section class="full-width header-well">
+		<div class="full-width header-well-icon">
+			<i class="zmdi zmdi-shopping-cart"></i>
+		</div>
+		<div class="full-width header-well-text">
+			<p class="text-condensedLight">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde aut nulla accusantium minus corporis accusamus fuga harum natus molestias necessitatibus.
+			</p>
+		</div>
+	</section>
+	<div class="full-width divider-menu-h"></div>
+	<div class="mdl-grid">
+		<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--12-col-desktop">
+			<label for="InputCedula">Cedula cliente:</label>
+			<input type="text" id="InputCedula" name="cedula" placeholder="Ordinario" />
+
+		
+
+			<label for="InputCodigoProducto">Codigo producto:</label>
+			<input type="text" id="InputCodigoProducto" name="CodigoProducto" placeholder="InputCodigoProducto" />
+
+			<button id="addList">Agregar a la lista</button>
+		</div>
+		<div>
+				<label for="Cantidad">Cantidad:</label>
+			<input type="text" id="Cantidad" name="cantidad" value="0" />
+		</div>
+		<div class="mdl-grid">
+			<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--12-col-desktop">
+				<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp full-width table-responsive">
+					<thead>
+						<tr>
+							<th class="mdl-data-table__cell--non-numeric">NOMBRE</th>
+							<th>CODIGO</th>
+							<th>PRECIO VENTA</th>
+							<th>CATEGORIA</th>							
+							<th>RETIRAR</th>
+						</tr>
+					</thead>
+					<tbody id="listado">
+					
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</section>
+<script type="text/javascript">
+	var contador = 1;
+	var total = 0;
+	$(document).ready(function () {
+
+	
+		
+	});
+	$('#addList').click(function(){
+		var cod = $('#InputCodigoProducto').val();
+		$.post('../back/outerController/productos/ProductoSelect.php',{
+			'cod':cod,
+			'contador':contador
+		}).done(function( result ){
+				$('#listado').html(result);
+				contador++;
+				total++;
+				$('#Cantidad').val(total);
+		});
+		
+
+
+	});
+function retirarProducto(cont){		
+		//alert(cont);//
+		$.post('../back/outerController/productos/ProductoRemove.php',{			
+			'contador':cont
+		}).done(function( result ){
+		//alert(result);				
+				$('#listado').html(result);
+				total--;
+				$('#Cantidad').val(total);
+		});
+
+	}
+	
+</script>
