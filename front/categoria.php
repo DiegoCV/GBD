@@ -72,13 +72,14 @@
                                                     <div class="modal-body"> 
                                                         <div class="row"> 
                                                             <div class="col-md-12"> 
-                                                                <div class="form-group"> 
-                                                                    <label for="field-1" class="control-label">NOMBRE_CATEGORIA</label> 
-                                                                    <input type="text" class="form-control" name="NOMBRE_CATEGORIA" class="form-control" id="InputNOMBRE_CATEGORIA" placeholder="NOMBRE_CATEGORIA"> 
-                                                                </div> 
-                                                            </div> 
-                                                       
-                                                  
+                                                               <form role="form" id="CategoriaInsert">                                                                  
+                                                                 <div class="form-group">
+                                                                      <label for="InputNOMBRE_CATEGORIA">NOMBRE_CATEGORIA</label>
+                                                                      <input type="text" name="NOMBRE_CATEGORIA" class="form-control" id="InputNOMBRE_CATEGORIA" placeholder="NOMBRE_CATEGORIA">
+                                                                   </div>
+                                                                    <a href="javascript:preCategoriaInsert('CategoriaInsert')" class="btn btn-warning">Registrar</a>
+                                                               </form>
+                                                            </div>                                                                                 
                                                     </div> 
                                                     <div class="modal-footer"> 
                                                         <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button> 

@@ -150,6 +150,10 @@ class ProductosController {
      return $result;
   }
 
+    public static function downloadPlantilla(){
+     include 'downloadPlantilla.php';
+  }
+
 
 }
 //That´s all folks!

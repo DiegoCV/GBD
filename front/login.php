@@ -34,7 +34,7 @@
     <body>
 
 
-        <div class="wrapper-page">
+        <div class="wrapper-page" >
             <div class="panel panel-color panel-primary panel-pages">
                 <div class="panel-heading bg-img"> 
                     <div class="bg-overlay"></div>
@@ -100,6 +100,8 @@
                 
             </div>
         </div>
+
+
 
         
     	<script>

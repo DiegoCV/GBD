@@ -71,38 +71,27 @@
                                                     </div> 
                                                     <div class="modal-body"> 
                                                         <div class="row"> 
-                                                            <div class="col-md-12"> 
-                                                                <div class="form-group"> 
-                                                                    <label for="field-1" class="control-label">NOMBRE EMPRESA </label> 
-                                                                    <input type="text" class="form-control" name="NOMBREEMPRESA_PROVEEDORES" class="form-control" id="InputNOMBREEMPRESA_PROVEEDORES" placeholder="NOMBRE EMPRESA"> 
-                                                                </div> 
-                                                            </div> 
+                                                       <form role="form" id="ProveedoresInsert">                                                        
+                                                          <div class="form-group">
+                                                              <label for="InputNOMBREEMPRESA_PROVEEDORES">NOMBREEMPRESA_PROVEEDORES</label>
+                                                              <input type="text" name="NOMBREEMPRESA_PROVEEDORES" class="form-control" id="InputNOMBREEMPRESA_PROVEEDORES" placeholder="NOMBREEMPRESA_PROVEEDORES">
+                                                           </div>
+                                                          <div class="form-group">
+                                                              <label for="InputNOMBREEMPLEADO_PROVEEDORES">NOMBREEMPLEADO_PROVEEDORES</label>
+                                                              <input type="text" name="NOMBREEMPLEADO_PROVEEDORES" class="form-control" id="InputNOMBREEMPLEADO_PROVEEDORES" placeholder="NOMBREEMPLEADO_PROVEEDORES">
+                                                           </div>
+                                                          <div class="form-group">
+                                                              <label for="InputDESCUENTO_PROVEEDOR">DESCUENTO_PROVEEDOR</label>
+                                                              <input type="text" name="DESCUENTO_PROVEEDOR" class="form-control" id="InputDESCUENTO_PROVEEDOR" placeholder="DESCUENTO_PROVEEDOR">
+                                                           </div>
+                                                          <div class="form-group">
+                                                              <label for="InputFECHAINGRESO_PROVEEDORES">FECHAINGRESO_PROVEEDORES</label>
+                                                              <input type="date" name="FECHAINGRESO_PROVEEDORES" class="form-control" id="InputFECHAINGRESO_PROVEEDORES" placeholder="FECHAINGRESO_PROVEEDORES">
+                                                           </div>
+                                                            <a href="javascript:preProveedoresInsert('ProveedoresInsert')" class="btn btn-warning">Registrar</a>
+                                                       </form>    
                                                        
-                                                        </div> 
-                                                        <div class="row"> 
-                                                            <div class="col-md-12"> 
-                                                                <div class="form-group"> 
-                                                                    <label for="field-3" class="control-label">NOMBRE EMPLEADO </label> 
-                                                                    <input type="text" class="form-control" name="NOMBREEMPLEADO_PROVEEDORES" class="form-control" id="InputNOMBREEMPLEADO_PROVEEDORES" placeholder="NOMBRE EMPLEADO"> 
-                                                                </div> 
-                                                            </div> 
-                                                        </div> 
-                                                        <div class="row"> 
-                                                            <div class="col-md-6"> 
-                                                                <div class="form-group"> 
-                                                                    <label for="field-4" class="control-label">DESCUENTO</label> 
-                                                                    <input type="text" class="form-control" name="DESCUENTO_PROVEEDOR" class="form-control" id="InputDESCUENTO_PROVEEDOR" placeholder="DESCUENTO"> 
-                                                                </div> 
-                                                            </div> 
-                                                            <div class="col-md-6"> 
-                                                                <div class="form-group"> 
-                                                                    <label for="field-5" class="control-label">FECHAI NGRESO</label> 
-                                                                    <input type="date" class="form-control" name="FECHAINGRESO_PROVEEDORES" class="form-control" id="InputFECHAINGRESO_PROVEEDORES" placeholder="FECHA INGRESO> 
-                                                                </div> 
-                                                            </div> 
-                                                          
-                                                        </div> 
-                                                      
+                                                        </div>                                                                                                             
                                                     </div> 
                                                    
                                                     <div class="modal-footer"> 

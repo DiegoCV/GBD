@@ -74,27 +74,22 @@
                                                     </div> 
                                                     <div class="modal-body"> 
                                                         <div class="row"> 
-                                                            <div class="col-md-12"> 
-                                                                <div class="form-group"> 
-                                                                    <label for="field-1" class="control-label">NOMBRE</label> 
-                                                                    <input type="text" class="form-control"name="NOMBRE_VENDEDOR" class="form-control" id="InputNOMBRE_VENDEDOR" placeholder="NOMBRE_VENDEDOR"> 
-                                                                </div> 
-                                                            </div> 
-                                                            <div class="col-md-12"> 
-                                                                <div class="form-group"> 
-                                                                    <label for="field-1" class="control-label">USUARIO</label> 
-                                                                    <input type="text" class="form-control" name="USUARIO_VENDEDOR" class="form-control" id="InputUSUARIO_VENDEDOR" placeholder="USUARIO_VENDEDOR"> 
-                                                                </div> 
-                                                            </div> 
-                                                            <div class="col-md-12"> 
-                                                                <div class="form-group"> 
-                                                                    <label for="field-1" class="control-label">PASS_VENDEDOR</label> 
-                                                                    <input type="text" class="form-control" name="PASS_VENDEDOR" class="form-control" id="InputPASS_VENDEDOR" placeholder="PASS_VENDEDOR"> 
-                                                                </div> 
-                                                            </div> 
-                                                       
-                                                  
-                                                    </div> 
+                                                            <form role="form" id="VendedorInsert">
+                                                                <div class="form-group">
+                                                                  <label for="InputNOMBRE_VENDEDOR">NOMBRE_VENDEDOR</label>
+                                                                  <input type="text" name="NOMBRE_VENDEDOR" class="form-control" id="InputNOMBRE_VENDEDOR" placeholder="NOMBRE_VENDEDOR">
+                                                               </div>
+                                                              <div class="form-group">
+                                                                  <label for="InputUSUARIO_VENDEDOR">USUARIO_VENDEDOR</label>
+                                                                  <input type="text" name="USUARIO_VENDEDOR" class="form-control" id="InputUSUARIO_VENDEDOR" placeholder="USUARIO_VENDEDOR">
+                                                               </div>
+                                                              <div class="form-group">
+                                                                  <label for="InputPASS_VENDEDOR">PASS_VENDEDOR</label>
+                                                                  <input type="text" name="PASS_VENDEDOR" class="form-control" id="InputPASS_VENDEDOR" placeholder="PASS_VENDEDOR">
+                                                               </div>                                                             
+                                                                <a href="javascript:preVendedorInsert('VendedorInsert')" class="btn btn-warning">Registrar</a>
+                                                           </form>                                                         
+                                                        </div> 
                                                     <div class="modal-footer"> 
                                                         <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button> 
                                                         <button type="button" class="btn btn-info waves-effect waves-light">Save changes</button> 
