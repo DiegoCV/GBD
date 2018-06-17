@@ -150,7 +150,14 @@
 <div class="modal-body"> 
 <div class="row"> 
     <a href="../back/outerController/productos/getPlantilla.php" class="btn btn-warning">Descargar planilla</a>
-    <a href="../back/outerController/productos/getPlantilla.php" class="btn btn-warning">subir planilla</a>
+    <form method="post" action="../back/outerController/productos/setPlantilla.php" enctype="multipart/form-data" id="subida">
+
+  <input type="file" name="archivo" id="archivo"></input>
+
+  <input type="submit" value="Subir archivo"></input>
+
+  </form>
+
 </div> 
 <br>
 <div class="modal-footer"> 
@@ -164,13 +171,7 @@
 </div>   
 <!-- end Modal -->
  
-<form method="post" action="../back/outerController/productos/setPlantilla.php" enctype="multipart/form-data" id="subida">
 
-<input type="file" name="archivo" id="archivo"></input>
-
-<input type="submit" value="Subir archivo"></input>
-
-</form>
        
                          <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" style="display: none">
                                             <div class="modal-dialog modal-sm">

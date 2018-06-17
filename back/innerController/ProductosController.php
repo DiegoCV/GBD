@@ -69,6 +69,28 @@ class ProductosController {
      return $rtn;
   }
 
+    public static function insert2( $idPRODUCTOS,  $pROVEEDORES_idPROVEEDORES,  $nOMBRE_PRODUCTO,  $uNIDAD_PRODUCTO,  $cOSTO_PRODUCTO,  $cANTIDAD_PRODUCTO,  $pRECIOVENTA_PRODUCTO,  $vALORMINIMO_PRODUCTO,  $fECHAINGRESO_PRODUCTO,  $fECHAVENCIMIENTO_PRODUCTO,  $cATEGORIA_idCATEGORIA,  $tIENDA_idTIENDA){
+      $productos = new Productos();
+      $productos->setIdPRODUCTOS($idPRODUCTOS); 
+      $productos->setPROVEEDORES_idPROVEEDORES($pROVEEDORES_idPROVEEDORES); 
+      $productos->setNOMBRE_PRODUCTO($nOMBRE_PRODUCTO); 
+      $productos->setUNIDAD_PRODUCTO($uNIDAD_PRODUCTO); 
+      $productos->setCOSTO_PRODUCTO($cOSTO_PRODUCTO); 
+      $productos->setCANTIDAD_PRODUCTO($cANTIDAD_PRODUCTO); 
+      $productos->setPRECIOVENTA_PRODUCTO($pRECIOVENTA_PRODUCTO); 
+      $productos->setVALORMINIMO_PRODUCTO($vALORMINIMO_PRODUCTO); 
+      $productos->setFECHAINGRESO_PRODUCTO($fECHAINGRESO_PRODUCTO); 
+      $productos->setFECHAVENCIMIENTO_PRODUCTO($fECHAVENCIMIENTO_PRODUCTO); 
+      $productos->setCATEGORIA_idCATEGORIA($cATEGORIA_idCATEGORIA); 
+      $productos->setTIENDA_idTIENDA($tIENDA_idTIENDA); 
+
+     $FactoryDao=new FactoryDao(self::getGestorDefault());
+     $productosDao =$FactoryDao->getproductosDao(self::getDataBaseDefault());
+     $rtn = $productosDao->insert2($productos);
+     $productosDao->close();
+     return $rtn;
+  }
+
   /**
    * Selecciona un objeto Productos de la base de datos a partir de su(s) llave(s) primaria(s).
    * Puede recibir NullPointerException desde los métodos del Dao
@@ -153,6 +175,8 @@ class ProductosController {
     public static function downloadPlantilla(){
      include 'downloadPlantilla.php';
   }
+
+  
 
 
 }

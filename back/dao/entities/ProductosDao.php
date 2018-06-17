@@ -32,7 +32,7 @@ private $cn;
      */
   public function insert($productos){
       $idPRODUCTOS=$productos->getIdPRODUCTOS();
-$pROVEEDORES_idPROVEEDORES=$productos->getPROVEEDORES_idPROVEEDORES()->getIdPROVEEDORES();
+        $pROVEEDORES_idPROVEEDORES=$productos->getPROVEEDORES_idPROVEEDORES()->getIdPROVEEDORES();
 $nOMBRE_PRODUCTO=$productos->getNOMBRE_PRODUCTO();
 $uNIDAD_PRODUCTO=$productos->getUNIDAD_PRODUCTO();
 $cOSTO_PRODUCTO=$productos->getCOSTO_PRODUCTO();
@@ -47,6 +47,52 @@ $tIENDA_idTIENDA=$productos->getTIENDA_idTIENDA()->getIdTIENDA();
       try {
           $sql= "INSERT INTO `productos`( `idPRODUCTOS`, `PROVEEDORES_idPROVEEDORES`, `NOMBRE_PRODUCTO`, `UNIDAD_PRODUCTO`, `COSTO_PRODUCTO`, `CANTIDAD_PRODUCTO`, `PRECIOVENTA_PRODUCTO`, `VALORMINIMO_PRODUCTO`, `FECHAINGRESO_PRODUCTO`, `FECHAVENCIMIENTO_PRODUCTO`, `CATEGORIA_idCATEGORIA`, `TIENDA_idTIENDA`)"
           ."VALUES ('$idPRODUCTOS','$pROVEEDORES_idPROVEEDORES','$nOMBRE_PRODUCTO','$uNIDAD_PRODUCTO','$cOSTO_PRODUCTO','$cANTIDAD_PRODUCTO','$pRECIOVENTA_PRODUCTO','$vALORMINIMO_PRODUCTO','$fECHAINGRESO_PRODUCTO','$fECHAVENCIMIENTO_PRODUCTO','$cATEGORIA_idCATEGORIA','$tIENDA_idTIENDA')";
+          return $this->insertarConsulta($sql);
+      } catch (SQLException $e) {
+          throw new Exception('Primary key is null');
+      }
+  }
+
+  public function insert2($productos){
+      $idPRODUCTOS=$productos->getIdPRODUCTOS();
+        $pROVEEDORES_idPROVEEDORES = $productos->getPROVEEDORES_idPROVEEDORES();
+$nOMBRE_PRODUCTO=$productos->getNOMBRE_PRODUCTO();
+$uNIDAD_PRODUCTO=$productos->getUNIDAD_PRODUCTO();
+$cOSTO_PRODUCTO=$productos->getCOSTO_PRODUCTO();
+$cANTIDAD_PRODUCTO=$productos->getCANTIDAD_PRODUCTO();
+$pRECIOVENTA_PRODUCTO=$productos->getPRECIOVENTA_PRODUCTO();
+$vALORMINIMO_PRODUCTO=$productos->getVALORMINIMO_PRODUCTO();
+$fECHAINGRESO_PRODUCTO=$productos->getFECHAINGRESO_PRODUCTO();
+$fECHAVENCIMIENTO_PRODUCTO=$productos->getFECHAVENCIMIENTO_PRODUCTO();
+$cATEGORIA_idCATEGORIA=$productos->getCATEGORIA_idCATEGORIA();
+$tIENDA_idTIENDA=$productos->getTIENDA_idTIENDA();
+      try {
+          $sql= "INSERT INTO `productos`(
+           `idPRODUCTOS`, 
+           `PROVEEDORES_idPROVEEDORES`,
+            `NOMBRE_PRODUCTO`, 
+            `UNIDAD_PRODUCTO`, 
+            `COSTO_PRODUCTO`, 
+            `CANTIDAD_PRODUCTO`, 
+            `PRECIOVENTA_PRODUCTO`, 
+            `VALORMINIMO_PRODUCTO`, 
+            `FECHAINGRESO_PRODUCTO`, 
+            `FECHAVENCIMIENTO_PRODUCTO`, 
+            `CATEGORIA_idCATEGORIA`, 
+            `TIENDA_idTIENDA`) 
+            VALUES (
+            '$idPRODUCTOS',
+            '$pROVEEDORES_idPROVEEDORES',
+            '$nOMBRE_PRODUCTO',
+            '$uNIDAD_PRODUCTO',
+            '$cOSTO_PRODUCTO',
+            '$cANTIDAD_PRODUCTO',
+            '$pRECIOVENTA_PRODUCTO',
+            '$vALORMINIMO_PRODUCTO',
+            '$fECHAINGRESO_PRODUCTO',
+            '$fECHAVENCIMIENTO_PRODUCTO',
+             (SELECT `idCATEGORIA` FROM `categoria` WHERE `NOMBRE_CATEGORIA` = '$cATEGORIA_idCATEGORIA'),
+            '$tIENDA_idTIENDA')";
           return $this->insertarConsulta($sql);
       } catch (SQLException $e) {
           throw new Exception('Primary key is null');

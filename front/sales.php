@@ -27,14 +27,14 @@
                                              <div class="form-group">
                                                 <label for="inputEmail3" class="col-sm-3 control-label">Producto</label>
                                                 <div class="col-sm-9">
-                                                  <input type="text" class="form-control" id="inputEmail3" placeholder="Email">
+                                                  <input type="text" class="form-control" id="InputCodigoProducto" placeholder="codigo producto">
                                                 </div>
                                             </div>
                                               
                                             <div class="form-group">
                                                 <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
                                                 <div class="col-sm-9">
-                                                  <input type="text"  id="InputCodigoProducto" class="form-control" id="inputEmail3" placeholder="Email">
+                                                  <input type="text" class="form-control" id="inputEmail3" placeholder="Email">
                                                 </div>
                                             </div>
                                             
