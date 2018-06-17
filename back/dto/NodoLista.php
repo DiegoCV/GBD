@@ -12,6 +12,7 @@ class NodoLista {
 
   private $contador;
   private $texto;
+  private $precio;
 
     /**
      * Constructor de Productos
@@ -27,7 +28,7 @@ class NodoLista {
   }
 
     /**
-     * Modifica el valor correspondiente a idPRODUCTOS
+     * Modifica el valor correspondiente a  idPRODUCTOS
      * @param idPRODUCTOS
      */
   public function setcontador($contador){
@@ -47,6 +48,13 @@ class NodoLista {
      */
   public function settexto($texto){
       $this->texto = $texto;
+  }
+
+  public function getPrecio(){
+      return $this->precio;
+  }
+  public function setPrecio($precio){
+      $this->precio = $precio;
   }
     
 }

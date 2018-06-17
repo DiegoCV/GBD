@@ -33,7 +33,7 @@ setcookie("idADMINISTRADOR",$vendedor->getIdVENDEDOR());
  	$_SESSION['nombre_usuario'] = $vendedor->getNOMBRE_VENDEDOR();
  	$_SESSION['tienda'] = $vendedor->getTIENDA_idTIENDA();
  	$_SESSION['tipo'] = 'vendedor';
-echo '<script language="javascript">window.location="../../../front/home.php"</script>';
+echo '<script language="javascript">window.location="../../../front/home1.php"</script>';
 }else{
 echo '<script language="javascript">window.location="../../../index.html"</script>';
 }

@@ -31,13 +31,19 @@ $rta="<tr id=\" $contador \">
 $nodo = new NodoLista();
 $nodo->setcontador($contador);
 $nodo->settexto($rta);
- $array = $_SESSION['lista'];
+$nodo->setPrecio($PRECIOVENTA);
+
+$array = $_SESSION['lista'];
 array_push($array,$nodo);
 $_SESSION['lista'] =$array;
 $men='';
+$total = 0;
+
 foreach ($array as $key => $value) {
 	$men .= $value->gettexto();
+	$total += $value->getPrecio();
 }
+$_SESSION['total']=$total;
 echo $men;
 
 //That´s all folks!

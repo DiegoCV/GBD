@@ -345,12 +345,12 @@ $tipo = $_SESSION['tipo'];
 			$( "#vista" ).load( ruta );
 		}
 //
-//		$(document).ready(function(){
-//			var tipo = '//<?php //echo $tipo ?>';
-//			if(tipo == 'Administrador'){      
-//		        $('#vender').hide();
-//		    }
-//		});
+		$(document).ready(function(){
+			var tipo = '<?php echo $tipo ?>';
+			if(tipo == 'Administrador'){      
+		        $('#sales').hide();
+		    }
+		});
 	</script>
     
         <script>

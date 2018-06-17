@@ -32,22 +32,22 @@
                                             </div>
                                               
                                             <div class="form-group">
-                                                <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
+                                                <label for="inputEmail3" class="col-sm-3 control-label">Cliente</label>
                                                 <div class="col-sm-9">
-                                                  <input type="text" class="form-control" id="inputEmail3" placeholder="Email">
+                                                  <input type="text" class="form-control" id="inputCliente" value="Ordinario" placeholder="Numero de cedula" />
                                                 </div>
                                             </div>
                                             
                                                    <div class="form-group">
-                                                <label for="inputEmail3" class="control-label">Cantidad :</label>
-                                                <label for="inputEmail3" class="control-label">$ 0</label>
+                                                <label class="control-label">Cantidad :</label>
+                                                <label id="Cantidad" class="control-label"> 0</label>
                                              
                                             </div>
                                             &nbsp;
                                             &nbsp;
                                                       <div class="form-group">
-                                                <label for="inputEmail3" class=" control-label">Total :</label>
-                                             <label for="inputEmail3" class="control-label">$ 0</label>
+                                                <label class=" control-label">Total :</label>
+                                             <label id="total" class="control-label">$ 0</label>
                                             </div>
                                             
                                             <input id="addList" class="btn btn-success waves-effect waves-light m-l-10" value="addList" />
@@ -70,10 +70,11 @@
                                 <table class="table table-hover" id="">
                                     <thead>
                                         <tr>
-                                            <th>Rendering engine</th>
-                                            <th>Browser</th>
-                                            <th>Platform(s)</th>
-                                            <th>Actions</th>
+                                            <th>Nombre</th>
+                                            <th>Codigo</th>
+                                            <th>Precio</th>
+                                            <th>Categoria</th>
+                                            <th>Retirar</th>
                                         </tr>
                                     </thead>
                                     <tbody id="listado">
@@ -146,7 +147,8 @@
                 $('#listado').html(result);
                 contador++;
                 total++;
-                $('#Cantidad').val(total);
+                $('#Cantidad').html(total);
+                getTotal();
         });
         
 
@@ -160,9 +162,17 @@ function retirarProducto(cont){
         //alert(result);                
                 $('#listado').html(result);
                 total--;
-                $('#Cantidad').val(total);
+                $('#Cantidad').html( total);
+                getTotal();
         });
 
+    }
+
+    function getTotal(){
+        $.post('../back/outerController/productos/ProductoTotal.php').
+        done(function( result ){       
+                $('#total').html('$ '+result);
+        });
     }
     
 </script>
