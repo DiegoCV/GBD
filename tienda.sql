@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-06-2018 a las 22:27:17
+-- Tiempo de generación: 24-06-2018 a las 20:55:59
 -- Versión del servidor: 10.1.28-MariaDB
 -- Versión de PHP: 7.1.11
 
@@ -115,8 +115,9 @@ CREATE TABLE `clientes` (
 --
 
 INSERT INTO `clientes` (`idCLIENTES`, `NOMBRE_CLIENTES`, `DIRECCION_CLIENTES`, `FECHANACIMIENTO_CLIENTES`, `EMAIL_CLIENTES`) VALUES
-(1, 'jhy', 'hj', '2018-06-21', 'gjhfgj'),
+(1, 'Ordinario', 'Ordinario', '2018-06-21', 'gjhfgj'),
 (2, 'El señor fia', '2018-06-13', '2018-06-13', 'fieiie@dsfd'),
+(1587, 'Corredor', 'calle lopez 25 ', '2018-06-06', 'fieiie@dsfd'),
 (4787, 'Su gran idea', 'calle de los farsantes', '2018-06-02', 'fieiie@dsfd'),
 (100499, 'Su gran idea', 'calle de los farsantes', '2018-06-13', 'fieiie@dsfd');
 
@@ -245,7 +246,14 @@ CREATE TABLE `ventas` (
 --
 
 INSERT INTO `ventas` (`idVENTAS`, `IVA_VENTAS`, `FECHACOMPRA_VENTAS`, `CLIENTES_idCLIENTES`, `VENDEDOR_idVENDEDOR`) VALUES
-(1, 'fg', '2018-06-19 00:00:00', 1, 1);
+(1, 'fg', '2018-06-19 00:00:00', 1, 1),
+(28, '0.19', '0000-00-00 00:00:00', 1, 4),
+(29, '0.19', '0000-00-00 00:00:00', 1, 4),
+(30, '0.19', '0000-00-00 00:00:00', 1, 4),
+(31, '0.19', '0000-00-00 00:00:00', 1, 4),
+(32, '0.19', '0000-00-00 00:00:00', 1587, 4),
+(33, '0.19', '0000-00-00 00:00:00', 4787, 4),
+(34, '0.19', '0000-00-00 00:00:00', 1, 4);
 
 -- --------------------------------------------------------
 
@@ -257,6 +265,18 @@ CREATE TABLE `ventas_has_productos` (
   `VENTAS_idVENTAS` int(11) NOT NULL,
   `PRODUCTOS_idPRODUCTOS` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `ventas_has_productos`
+--
+
+INSERT INTO `ventas_has_productos` (`VENTAS_idVENTAS`, `PRODUCTOS_idPRODUCTOS`) VALUES
+(31, 56),
+(32, 60),
+(32, 71),
+(33, 56),
+(33, 60),
+(34, 56);
 
 --
 -- Índices para tablas volcadas
@@ -376,7 +396,7 @@ ALTER TABLE `vendedor`
 -- AUTO_INCREMENT de la tabla `ventas`
 --
 ALTER TABLE `ventas`
-  MODIFY `idVENTAS` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idVENTAS` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- Restricciones para tablas volcadas
