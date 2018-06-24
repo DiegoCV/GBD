@@ -76,7 +76,7 @@
                             <div class="checkbox checkbox-primary">
                                 <input id="checkbox-signup" type="checkbox">
                                 <label for="checkbox-signup">
-                                    Remember me
+                                    Recuerdame
                                 </label>
                             </div>
                             
@@ -85,14 +85,14 @@
                     
                     <div class="form-group text-center m-t-40">
                         <div class="col-xs-12">
-                            <button class="btn btn-primary btn-lg w-lg waves-effect waves-light" type="submit">Log In</button>
+                            <button class="btn btn-primary btn-lg w-lg waves-effect waves-light" type="submit">Iniciar sesion</button>
                         </div>
                     </div>
 
                     <div class="form-group m-t-30">
                        
                         <div class="col-sm-5 text-right">
-                            <a href="javascript:cargaContenido('container','AdministradorInsert.html')">Create an account</a>
+                            <a href="javascript:cargaContenido('container','AdministradorInsert.html')">Crea una cuenta</a>
                         </div>
                     </div>
                 </form> 

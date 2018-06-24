@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-06-2018 a las 20:55:59
+-- Tiempo de generación: 24-06-2018 a las 21:31:40
 -- Versión del servidor: 10.1.28-MariaDB
 -- Versión de PHP: 7.1.11
 
@@ -152,7 +152,11 @@ INSERT INTO `productos` (`idPRODUCTOS`, `PROVEEDORES_idPROVEEDORES`, `NOMBRE_PRO
 (58, 3, 'CocaCola', 'Lt', '5000', 3, '5500', '5300', '2018-06-12 00:00:00', '2018-06-21 00:00:00', 2, 1),
 (60, 3, 'sas', 'asa', 'sas', 0, '5000', '5000', '2018-05-31 00:00:00', '2018-06-14 00:00:00', 1, 1),
 (70, 1, 'Huevos KIKE', 'Cartones', '100000', 20, '8000', '7500', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 29, 1),
-(71, 1, 'Pepsi', 'botella ', '70000', 50, '2400', '2300', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 7, 1);
+(71, 1, 'Pepsi', 'botella ', '70000', 50, '2400', '2300', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 7, 1),
+(72, 1, 'Yogurt', 'Cartones', '100000', 20, '8000', '7500', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 16, 3),
+(73, 1, 'Leche', 'Bolsa', '70000', 50, '2400', '2300', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 16, 3),
+(74, 1, 'Pollas en vinagre', 'Cartones', '100000', 20, '8000', '7500', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 17, 3),
+(75, 1, 'Soya', 'Bolsa', '70000', 50, '2400', '2300', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 18, 3);
 
 -- --------------------------------------------------------
 
@@ -253,7 +257,14 @@ INSERT INTO `ventas` (`idVENTAS`, `IVA_VENTAS`, `FECHACOMPRA_VENTAS`, `CLIENTES_
 (31, '0.19', '0000-00-00 00:00:00', 1, 4),
 (32, '0.19', '0000-00-00 00:00:00', 1587, 4),
 (33, '0.19', '0000-00-00 00:00:00', 4787, 4),
-(34, '0.19', '0000-00-00 00:00:00', 1, 4);
+(34, '0.19', '0000-00-00 00:00:00', 1, 4),
+(35, '0.19', '0000-00-00 00:00:00', 4787, 4),
+(36, '0.19', '0000-00-00 00:00:00', 4787, 4),
+(37, '0.19', '0000-00-00 00:00:00', 4787, 4),
+(38, '0.19', '0000-00-00 00:00:00', 4787, 4),
+(39, '0.19', '0000-00-00 00:00:00', 1587, 4),
+(40, '0.19', '0000-00-00 00:00:00', 1, 4),
+(41, '0.19', '0000-00-00 00:00:00', 4787, 4);
 
 -- --------------------------------------------------------
 
@@ -263,20 +274,21 @@ INSERT INTO `ventas` (`idVENTAS`, `IVA_VENTAS`, `FECHACOMPRA_VENTAS`, `CLIENTES_
 
 CREATE TABLE `ventas_has_productos` (
   `VENTAS_idVENTAS` int(11) NOT NULL,
-  `PRODUCTOS_idPRODUCTOS` int(11) NOT NULL
+  `PRODUCTOS_idPRODUCTOS` int(11) NOT NULL,
+  `cont` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `ventas_has_productos`
 --
 
-INSERT INTO `ventas_has_productos` (`VENTAS_idVENTAS`, `PRODUCTOS_idPRODUCTOS`) VALUES
-(31, 56),
-(32, 60),
-(32, 71),
-(33, 56),
-(33, 60),
-(34, 56);
+INSERT INTO `ventas_has_productos` (`VENTAS_idVENTAS`, `PRODUCTOS_idPRODUCTOS`, `cont`) VALUES
+(40, 56, 1),
+(40, 56, 2),
+(41, 56, 3),
+(41, 56, 4),
+(41, 56, 5),
+(41, 56, 6);
 
 --
 -- Índices para tablas volcadas
@@ -342,7 +354,7 @@ ALTER TABLE `ventas`
 -- Indices de la tabla `ventas_has_productos`
 --
 ALTER TABLE `ventas_has_productos`
-  ADD PRIMARY KEY (`VENTAS_idVENTAS`,`PRODUCTOS_idPRODUCTOS`),
+  ADD PRIMARY KEY (`cont`),
   ADD KEY `fk_VENTAS_has_PRODUCTOS_PRODUCTOS1_idx` (`PRODUCTOS_idPRODUCTOS`),
   ADD KEY `fk_VENTAS_has_PRODUCTOS_VENTAS1_idx` (`VENTAS_idVENTAS`);
 
@@ -372,7 +384,7 @@ ALTER TABLE `clientes`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `idPRODUCTOS` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+  MODIFY `idPRODUCTOS` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- AUTO_INCREMENT de la tabla `proveedores`
@@ -396,7 +408,13 @@ ALTER TABLE `vendedor`
 -- AUTO_INCREMENT de la tabla `ventas`
 --
 ALTER TABLE `ventas`
-  MODIFY `idVENTAS` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `idVENTAS` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+
+--
+-- AUTO_INCREMENT de la tabla `ventas_has_productos`
+--
+ALTER TABLE `ventas_has_productos`
+  MODIFY `cont` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Restricciones para tablas volcadas

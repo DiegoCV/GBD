@@ -17,7 +17,7 @@
       </div>
       <div class="col-md-4">
               <div align=center >
-                     <h1 class="logo-name"><img src="http://drive.google.com/uc?export=view&id=1c60GXvKCGKyDYkFreoAuXPXu4IaEw-Yh " style="max-width:100%;"> </h1>
+                     <h1 class="logo-name"><img src="logo1.jpg" style="max-width:100%;"> </h1>
               </div>
           <div class="panel panel-default" id="container">
               <div align=center class="panel-heading"><h3 class="panel-title">Iniciar sesión</h3></div>

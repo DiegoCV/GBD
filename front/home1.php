@@ -235,7 +235,7 @@ $tipo = $_SESSION['tipo'];
 
 <script type="text/javascript">
 		$('#home').click(function () {
-			cargarCont('cartas.html');
+			cargarCont('home1.php');
 		});
 		$('#providers').click(function () {
 			cargarCont('providers.php');
@@ -282,7 +282,11 @@ $tipo = $_SESSION['tipo'];
 			var tipo = '<?php echo $tipo ?>';
 			if(tipo == 'Administrador'){      
 		        $('#sales').hide();
-		    }
+		    }else{
+                $('#providers').hide();
+                 $('#vendedor').hide();
+                   $('#products').hide();
+            }
 		});
 	</script>
     

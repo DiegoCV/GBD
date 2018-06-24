@@ -174,6 +174,7 @@
                 alert('Su total a pagar es: '+t);
                 cargarCont('sales.php');
             }else{
+                alert(result);
                 alert('Creo que hay problemas');
             }
             
