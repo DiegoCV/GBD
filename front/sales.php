@@ -23,18 +23,23 @@
                                     <div class="panel-heading"><h3 class="panel-title">Inline Form</h3></div>
                                     <div class="panel-body">
                                     
-                                        <form class="form-inline" role="form">
+                                        <div class="form-inline" >
                                              <div class="form-group">
-                                                <label for="inputEmail3" class="col-sm-3 control-label">Producto</label>
-                                                <div class="col-sm-9">
-                                                  <input type="text" class="form-control" id="InputCodigoProducto" placeholder="codigo producto">
+                                                <label for="InputCodigoProducto" class="col-sm-3 control-label">Producto</label>     &nbsp;
+                                                <div class="col-sm-9">                                                
+                                                  <select class="form-control" id="InputCodigoProducto">
+                                                      
+                                                  </select>
                                                 </div>
                                             </div>
                                               
                                             <div class="form-group">
                                                 <label for="inputEmail3" class="col-sm-3 control-label">Cliente</label>
+                                                &nbsp;
                                                 <div class="col-sm-9">
-                                                  <input type="text" class="form-control" id="inputCliente" value="Ordinario" placeholder="Numero de cedula" />
+                                                    <select class="form-control" id="inputCliente">
+                                                        
+                                                    </select>                                                
                                                 </div>
                                             </div>
                                             
@@ -43,15 +48,17 @@
                                                 <label id="Cantidad" class="control-label"> 0</label>
                                              
                                             </div>
-                                            &nbsp;
-                                            &nbsp;
+                                            &nbsp;                                        
                                                       <div class="form-group">
                                                 <label class=" control-label">Total :</label>
                                              <label id="total" class="control-label">$ 0</label>
                                             </div>
-                                            
+                                           
                                             <input id="addList" class="btn btn-success waves-effect waves-light m-l-10" value="addList" />
-                                        </form>
+
+                                            <input type="submit" id="vender" value="vender">
+                                                 
+                                        </div>
                                     </div> <!-- panel-body -->
                                 </div> <!-- panel -->
                             </div> <!-- col -->
@@ -134,11 +141,15 @@
     var contador = 1;
     var total = 0;
     $(document).ready(function () {
-
+        getProductos();
+        getClientes();
     
         
     });
     $('#addList').click(function(){
+        if(contador == 1){
+            $('#inputCliente').prop('disabled', 'disabled');
+        }
         var cod = $('#InputCodigoProducto').val();
         $.post('../back/outerController/productos/ProductoSelect.php',{
             'cod':cod,
@@ -151,8 +162,22 @@
                 getTotal();
         });
         
+    });
 
-
+    $('#vender').click(function(){
+        var cliente = $('#inputCliente').val();
+        $.post('../back/outerController/ventas/VentasInsert.php',{         
+            'cliente':cliente
+        }).done(function( result ){
+            if(result == 'ok'){
+                var t = $('#total').text();
+                alert('Su total a pagar es: '+t);
+                cargarCont('sales.php');
+            }else{
+                alert('Creo que hay problemas');
+            }
+            
+        });    
     });
 function retirarProducto(cont){     
         //alert(cont);//
@@ -174,7 +199,27 @@ function retirarProducto(cont){
                 $('#total').html('$ '+result);
         });
     }
+
+    function getTotal(){
+        $.post('../back/outerController/productos/ProductoTotal.php').
+        done(function( result ){       
+                $('#total').html('$ '+result);
+        });
+    }
+
+    function getClientes(){
+        $.post('../back/outerController/clientes/ClientesSelect.php').
+        done(function( result ){       
+                $('#inputCliente').html(result);
+        });
+    }
     
+    function getProductos(){
+        $.post('../back/outerController/productos/ProductoOption.php').
+        done(function( result ){       
+                $('#InputCodigoProducto').html(result);
+        });
+    }
 </script>
 
 

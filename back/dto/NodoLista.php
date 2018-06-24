@@ -13,11 +13,21 @@ class NodoLista {
   private $contador;
   private $texto;
   private $precio;
+  private $idProductos;
 
     /**
      * Constructor de Productos
     */
      public function __construct(){}
+
+      public function getidProductos(){
+      return $this->idProductos;
+  }
+
+  public function setidProductos($idProductos){
+    $this->idProductos = $idProductos;
+  }
+
 
     /**
      * Devuelve el valor correspondiente a idPRODUCTOS

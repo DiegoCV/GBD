@@ -4,7 +4,7 @@
              \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
-
+ 
 //    Antes que me hubiera apasionado por mujer alguna, jugué mi corazón al azar y me lo ganó la Violencia.  \\
 include_once realpath('../../innerController/ProductosController.php');
 include_once realpath('../../dto/NodoLista.php');
@@ -32,6 +32,7 @@ $nodo = new NodoLista();
 $nodo->setcontador($contador);
 $nodo->settexto($rta);
 $nodo->setPrecio($PRECIOVENTA);
+$nodo->setidProductos($CODIGO);
 
 $array = $_SESSION['lista'];
 array_push($array,$nodo);

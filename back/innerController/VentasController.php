@@ -38,7 +38,7 @@ class VentasController {
    * @param fECHACOMPRA_VENTAS
    * @param cLIENTES_idCLIENTES
    * @param vENDEDOR_idVENDEDOR
-   */
+   */ 
   public static function insert( $idVENTAS,  $iVA_VENTAS,  $fECHACOMPRA_VENTAS,  $cLIENTES_idCLIENTES,  $vENDEDOR_idVENDEDOR){
       $ventas = new Ventas();
       $ventas->setIdVENTAS($idVENTAS); 

@@ -30,8 +30,8 @@ private $cn;
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function insert($ventas_has_productos){
-      $vENTAS_idVENTAS=$ventas_has_productos->getVENTAS_idVENTAS()->getIdVENTAS();
-$pRODUCTOS_idPRODUCTOS=$ventas_has_productos->getPRODUCTOS_idPRODUCTOS()->getIdPRODUCTOS();
+      $vENTAS_idVENTAS=$ventas_has_productos->getVENTAS_idVENTAS();
+$pRODUCTOS_idPRODUCTOS=$ventas_has_productos->getPRODUCTOS_idPRODUCTOS();
 
       try {
           $sql= "INSERT INTO `ventas_has_productos`( `VENTAS_idVENTAS`, `PRODUCTOS_idPRODUCTOS`)"

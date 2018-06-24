@@ -48,6 +48,11 @@ class Ventas_has_productosController {
      return $rtn;
   }
 
+  public static function insertar($venta,$productos){  
+    foreach ($productos as $key => $value) {
+      Ventas_has_productosController::insert($venta,$value);
+    }
+  }   
   /**
    * Selecciona un objeto Ventas_has_productos de la base de datos a partir de su(s) llave(s) primaria(s).
    * Puede recibir NullPointerException desde los métodos del Dao

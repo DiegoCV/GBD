@@ -38,7 +38,7 @@ $vENDEDOR_idVENDEDOR=$ventas->getVENDEDOR_idVENDEDOR()->getIdVENDEDOR();
 
       try {
           $sql= "INSERT INTO `ventas`( `idVENTAS`, `IVA_VENTAS`, `FECHACOMPRA_VENTAS`, `CLIENTES_idCLIENTES`, `VENDEDOR_idVENDEDOR`)"
-          ."VALUES ('$idVENTAS','$iVA_VENTAS','$fECHACOMPRA_VENTAS','$cLIENTES_idCLIENTES','$vENDEDOR_idVENDEDOR')";
+          ."VALUES ('$idVENTAS','$iVA_VENTAS','$fECHACOMPRA_VENTAS',$cLIENTES_idCLIENTES,$vENDEDOR_idVENDEDOR)";
           return $this->insertarConsulta($sql);
       } catch (SQLException $e) {
           throw new Exception('Primary key is null');
