@@ -65,7 +65,8 @@ $vALORMINIMO_PRODUCTO=$productos->getVALORMINIMO_PRODUCTO();
 $fECHAINGRESO_PRODUCTO=$productos->getFECHAINGRESO_PRODUCTO();
 $fECHAVENCIMIENTO_PRODUCTO=$productos->getFECHAVENCIMIENTO_PRODUCTO();
 $cATEGORIA_idCATEGORIA=$productos->getCATEGORIA_idCATEGORIA();
-$tIENDA_idTIENDA=$productos->getTIENDA_idTIENDA();
+$tIENDA_idTIENDA=$productos->getTIENDA_idTIENDA()->getIdTIENDA();
+
       try {
           $sql= "INSERT INTO `productos`(
            `idPRODUCTOS`, 
